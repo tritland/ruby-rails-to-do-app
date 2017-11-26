@@ -7,6 +7,7 @@
         %th Title
         %th Created at
         %th Completed
+        %th Actions
     %tbody
       - tasks.each do |task|
         %tr
@@ -14,3 +15,6 @@
             %strong= task.title
           %td.text-info= task.created_at
           %td.text-success= task.completed
+          %td
+            = link_to task_path(task), remote: true, method: :delete do
+              %i.glyphicon-remove delete 
