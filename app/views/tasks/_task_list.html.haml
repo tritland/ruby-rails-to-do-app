@@ -16,5 +16,7 @@
           %td.text-info= task.created_at
           %td.text-success= task.completed
           %td
-            = link_to task_path(task), remote: true, method: :delete do
-              %i.glyphicon-remove delete 
+            = link_to task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure you want to delete this task?"} do
+              %i.glyphicon-remove delete
+            = link_to edit_task_path(task), remote: true do
+              %i.icon-edit edit 
